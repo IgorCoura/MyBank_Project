@@ -1,0 +1,63 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "MyBank.Application/1.0.0": {
+        "dependencies": {
+          "MyBank.Service": "1.0.0"
+        },
+        "runtime": {
+          "MyBank.Application.dll": {}
+        }
+      },
+      "MyBank.Domain/1.0.0": {
+        "runtime": {
+          "MyBank.Domain.dll": {}
+        }
+      },
+      "MyBank.Infra.Shared/1.0.0": {
+        "dependencies": {
+          "MyBank.Domain": "1.0.0"
+        },
+        "runtime": {
+          "MyBank.Infra.Shared.dll": {}
+        }
+      },
+      "MyBank.Service/1.0.0": {
+        "dependencies": {
+          "MyBank.Domain": "1.0.0",
+          "MyBank.Infra.Shared": "1.0.0"
+        },
+        "runtime": {
+          "MyBank.Service.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MyBank.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyBank.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyBank.Infra.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyBank.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

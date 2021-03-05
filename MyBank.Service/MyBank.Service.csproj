@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyBank.Domain\MyBank.Domain.csproj" />
+    <ProjectReference Include="..\MyBank.Infra.Shared\MyBank.Infra.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

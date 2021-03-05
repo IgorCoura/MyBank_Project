@@ -1,0 +1,12 @@
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Domain\bin\Debug\net5.0\MyBank.Domain.deps.json
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Domain\bin\Debug\net5.0\MyBank.Domain.dll
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Domain\bin\Debug\net5.0\ref\MyBank.Domain.dll
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Domain\bin\Debug\net5.0\MyBank.Domain.pdb
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Domain\obj\Debug\net5.0\MyBank.Domain.csprojAssemblyReference.cache
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Domain\obj\Debug\net5.0\MyBank.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Domain\obj\Debug\net5.0\MyBank.Domain.AssemblyInfoInputs.cache
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Domain\obj\Debug\net5.0\MyBank.Domain.AssemblyInfo.cs
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Domain\obj\Debug\net5.0\MyBank.Domain.csproj.CoreCompileInputs.cache
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Domain\obj\Debug\net5.0\MyBank.Domain.dll
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Domain\obj\Debug\net5.0\ref\MyBank.Domain.dll
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Domain\obj\Debug\net5.0\MyBank.Domain.pdb
