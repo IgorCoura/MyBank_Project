@@ -9,7 +9,7 @@ namespace MyBank.Domain.Models
 {
     public class CreateContaModel
     {
-        public CreateContaModel(Cliente cliente, int agencia, int numConta, int senha)
+        public CreateContaModel(Cliente cliente, int agencia, int numConta, string senha)
         {
             Cliente = cliente;
             Agencia = agencia;
@@ -20,6 +20,6 @@ namespace MyBank.Domain.Models
         public Cliente Cliente { get; set; }
         public int Agencia { get; set; }
         public int NumConta { get; set; }
-        public int Senha { get; set; }
+        public string Senha { get; set; }
     }
 }

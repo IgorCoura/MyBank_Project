@@ -26,13 +26,17 @@ namespace MyBank.Domain
                 }
                 Console.WriteLine("\n");
             }
-            exceptions = new List<Exception>();
-            
+            clean();
         }
 
         public static int countException()
         {
             return exceptions.Count();
+        }
+
+        public static void clean()
+        {
+            exceptions = new List<Exception>();
         }
     }
 }

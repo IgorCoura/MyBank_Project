@@ -1,4 +1,5 @@
-﻿using MyBank.Application.TestCliente;
+﻿using MyBank.Application.Display;
+using MyBank.Application.TestCliente;
 using MyBank.Domain;
 using MyBank.Domain.Entities;
 using MyBank.Domain.Interfaces;
@@ -26,8 +27,8 @@ namespace MyBank.Application
             TestClientes cc = new TestClientes(ClienteRepository, ClienteService);
             cc.ViewAll();
 
-            ContaService.insert(new CreateContaModel(ClienteService.Recover("048.791.300-01"), 100, 100, 12345678));
-            ContaService.insert(new CreateContaModel(ClienteService.Recover("453.200.670-89"), 100, 200, 87654321));
+            ContaService.insert(new CreateContaModel(ClienteService.Recover("048.791.300-01"), 100, 100, "12345678"));
+            ContaService.insert(new CreateContaModel(ClienteService.Recover("453.200.670-89"), 100, 200, "87654321"));
             List<ReturnContaModel> contaModel = (List<ReturnContaModel>)ContaService.Recover();
             foreach(ReturnContaModel c in contaModel)
             {
@@ -44,7 +45,14 @@ namespace MyBank.Application
         {
             IRepositoryCliente ClienteRepository = new ClienteRepository();
             IServiceCliente ClienteService = new ClienteService(ClienteRepository);
-            Display display = new Display(ClienteService);
+            //TODO: fazer um repository pra cada tipo de conta.
+            IRepositoryConta ContaRepository = new ContaRepository();
+            IServiceContaCorrente CorrenteService = new ContaCorrenteService(ContaRepository);
+            IServiceContaPoupanca PoupancaServce = new ContaPoupancaService(ContaRepository);
+
+            IDisplayCadastro dc = new CadastroDisplay(ClienteService, CorrenteService, PoupancaServce);
+
+            IDisplayInit display = new InitDisplay(dc);
             display.Init();
         }
     }
