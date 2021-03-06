@@ -12,6 +12,19 @@
           "bin/placeholder/MyBank.Domain.dll": {}
         }
       },
+      "MyBank.Infra.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "MyBank.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MyBank.Infra.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyBank.Infra.Data.dll": {}
+        }
+      },
       "MyBank.Infra.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -47,6 +60,11 @@
       "path": "../MyBank.Domain/MyBank.Domain.csproj",
       "msbuildProject": "../MyBank.Domain/MyBank.Domain.csproj"
     },
+    "MyBank.Infra.Data/1.0.0": {
+      "type": "project",
+      "path": "../MyBank.Infra.Data/MyBank.Infra.Data.csproj",
+      "msbuildProject": "../MyBank.Infra.Data/MyBank.Infra.Data.csproj"
+    },
     "MyBank.Infra.Shared/1.0.0": {
       "type": "project",
       "path": "../MyBank.Infra.Shared/MyBank.Infra.Shared.csproj",
@@ -60,6 +78,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "MyBank.Infra.Data >= 1.0.0",
       "MyBank.Service >= 1.0.0"
     ]
   },
@@ -95,6 +114,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "D:\\AreaDoCodigo\\.Codigos\\.NET\\MyBank_Project\\MyBank.Infra.Data\\MyBank.Infra.Data.csproj": {
+              "projectPath": "D:\\AreaDoCodigo\\.Codigos\\.NET\\MyBank_Project\\MyBank.Infra.Data\\MyBank.Infra.Data.csproj"
+            },
             "D:\\AreaDoCodigo\\.Codigos\\.NET\\MyBank_Project\\MyBank.Service\\MyBank.Service.csproj": {
               "projectPath": "D:\\AreaDoCodigo\\.Codigos\\.NET\\MyBank_Project\\MyBank.Service\\MyBank.Service.csproj"
             }

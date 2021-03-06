@@ -5,9 +5,9 @@ using System.Text;
 
 namespace MyBank.Domain.Models
 {
-    public class CreateCliente
+    public class CreateClienteModel
     {
-        public CreateCliente(string nome, string cpf, string dataNascimento)
+        public CreateClienteModel(string nome, string cpf, string dataNascimento)
         {
             Nome = nome;
             CPF = cpf;

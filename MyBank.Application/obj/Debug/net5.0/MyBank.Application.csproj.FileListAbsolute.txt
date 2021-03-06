@@ -21,3 +21,5 @@ D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Application\bin\Debug\net5.0
 D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Application\bin\Debug\net5.0\MyBank.Infra.Shared.dll
 D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Application\bin\Debug\net5.0\MyBank.Domain.pdb
 D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Application\bin\Debug\net5.0\MyBank.Infra.Shared.pdb
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Application\bin\Debug\net5.0\MyBank.Infra.Data.dll
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Application\bin\Debug\net5.0\MyBank.Infra.Data.pdb

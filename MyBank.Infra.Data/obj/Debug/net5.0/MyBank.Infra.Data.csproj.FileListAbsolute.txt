@@ -1,0 +1,15 @@
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Infra.Data\obj\Debug\net5.0\MyBank.Infra.Data.csprojAssemblyReference.cache
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Infra.Data\obj\Debug\net5.0\MyBank.Infra.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Infra.Data\obj\Debug\net5.0\MyBank.Infra.Data.AssemblyInfoInputs.cache
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Infra.Data\obj\Debug\net5.0\MyBank.Infra.Data.AssemblyInfo.cs
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Infra.Data\obj\Debug\net5.0\MyBank.Infra.Data.csproj.CoreCompileInputs.cache
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Infra.Data\bin\Debug\net5.0\MyBank.Infra.Data.deps.json
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Infra.Data\bin\Debug\net5.0\MyBank.Infra.Data.dll
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Infra.Data\bin\Debug\net5.0\ref\MyBank.Infra.Data.dll
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Infra.Data\bin\Debug\net5.0\MyBank.Infra.Data.pdb
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Infra.Data\bin\Debug\net5.0\MyBank.Domain.dll
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Infra.Data\bin\Debug\net5.0\MyBank.Domain.pdb
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Infra.Data\obj\Debug\net5.0\MyBank.Infra.Data.csproj.CopyComplete
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Infra.Data\obj\Debug\net5.0\MyBank.Infra.Data.dll
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Infra.Data\obj\Debug\net5.0\ref\MyBank.Infra.Data.dll
+D:\AreaDoCodigo\.Codigos\.NET\MyBank_Project\MyBank.Infra.Data\obj\Debug\net5.0\MyBank.Infra.Data.pdb

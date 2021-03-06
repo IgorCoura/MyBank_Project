@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "MyBank.Application/1.0.0": {
         "dependencies": {
+          "MyBank.Infra.Data": "1.0.0",
           "MyBank.Service": "1.0.0"
         },
         "runtime": {
@@ -17,6 +18,14 @@
       "MyBank.Domain/1.0.0": {
         "runtime": {
           "MyBank.Domain.dll": {}
+        }
+      },
+      "MyBank.Infra.Data/1.0.0": {
+        "dependencies": {
+          "MyBank.Domain": "1.0.0"
+        },
+        "runtime": {
+          "MyBank.Infra.Data.dll": {}
         }
       },
       "MyBank.Infra.Shared/1.0.0": {
@@ -45,6 +54,11 @@
       "sha512": ""
     },
     "MyBank.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyBank.Infra.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

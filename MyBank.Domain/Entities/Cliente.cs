@@ -1,4 +1,5 @@
 ﻿using Aurora.Domain.ValueTypes;
+using MyBank.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,5 +22,7 @@ namespace MyBank.Domain.Entities
         public CPF CPF { get; set; }
         public string DataNascimento { get; set; }
         public double Credito { get; set; }
+
+        
     }
 }
