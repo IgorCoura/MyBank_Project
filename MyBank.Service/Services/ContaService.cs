@@ -37,7 +37,13 @@ namespace MyBank.Service.Services
         {
             IEnumerable<Conta> contas = repositoryConta.Get();
             return contas.ConvertToReturnModel();
-        } 
-        
+        }
+
+        public ReturnContaModel Recover(int agencia, int numConta, string senha)
+        {
+            Conta contas = repositoryConta.Get(agencia, numConta, senha);
+            return contas.ConvertToReturnModel();
+        }
+
     }
 }

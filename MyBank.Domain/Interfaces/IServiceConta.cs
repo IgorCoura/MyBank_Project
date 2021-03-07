@@ -11,5 +11,6 @@ namespace MyBank.Domain.Interfaces
     {
         public bool insert(CreateContaModel createConta);
         public IEnumerable<ReturnContaModel> Recover();
+        public ReturnContaModel Recover(int agencia, int numConta, string senha);
     }
 }

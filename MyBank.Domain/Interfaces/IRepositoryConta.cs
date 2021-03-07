@@ -16,6 +16,6 @@ namespace MyBank.Domain.Interfaces
         public IEnumerable<Conta> Get();
 
         public Conta Get(int id);
-        public Conta Get(int agencia, int numConta);
+        public Conta Get(int agencia, int numConta, string senha);
     }
 }

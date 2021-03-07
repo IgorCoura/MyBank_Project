@@ -29,8 +29,7 @@ namespace MyBank.Infra.Data.Repository
         }
 
         public IEnumerable<Conta> Get() => base.Select();
-
         public Conta Get(int id) => base.Select(x => x.Id == id);
-        public Conta Get(int agencia, int numConta) => base.Select(x => x.Agencia == agencia && x.NumConta == numConta);
+        public Conta Get(int agencia, int numConta, string senha) => base.Select(x => x.Agencia == agencia && x.NumConta == numConta && x.Senha == senha);
     }
 }
