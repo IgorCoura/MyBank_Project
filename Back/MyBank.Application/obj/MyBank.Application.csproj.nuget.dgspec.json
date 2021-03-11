@@ -1,0 +1,411 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Application\\MyBank.Application.csproj": {}
+  },
+  "projects": {
+    "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Application\\MyBank.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Application\\MyBank.Application.csproj",
+        "projectName": "MyBank.Application",
+        "projectPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Application\\MyBank.Application.csproj",
+        "packagesPath": "C:\\Users\\IGOR-NOT\\.nuget\\packages\\",
+        "outputPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\IGOR-NOT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Domain\\MyBank.Domain.csproj": {
+                "projectPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Domain\\MyBank.Domain.csproj"
+              },
+              "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.CrossCutting\\MyBank.Infra.CrossCutting.csproj": {
+                "projectPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.CrossCutting\\MyBank.Infra.CrossCutting.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Domain\\MyBank.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Domain\\MyBank.Domain.csproj",
+        "projectName": "MyBank.Domain",
+        "projectPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Domain\\MyBank.Domain.csproj",
+        "packagesPath": "C:\\Users\\IGOR-NOT\\.nuget\\packages\\",
+        "outputPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\IGOR-NOT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.CrossCutting\\MyBank.Infra.CrossCutting.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.CrossCutting\\MyBank.Infra.CrossCutting.csproj",
+        "projectName": "MyBank.Infra.CrossCutting",
+        "projectPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.CrossCutting\\MyBank.Infra.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\IGOR-NOT\\.nuget\\packages\\",
+        "outputPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.CrossCutting\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\IGOR-NOT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Domain\\MyBank.Domain.csproj": {
+                "projectPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Domain\\MyBank.Domain.csproj"
+              },
+              "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.Data\\MyBank.Infra.Data.csproj": {
+                "projectPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.Data\\MyBank.Infra.Data.csproj"
+              },
+              "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Service\\MyBank.Service.csproj": {
+                "projectPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Service\\MyBank.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.Data\\MyBank.Infra.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.Data\\MyBank.Infra.Data.csproj",
+        "projectName": "MyBank.Infra.Data",
+        "projectPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.Data\\MyBank.Infra.Data.csproj",
+        "packagesPath": "C:\\Users\\IGOR-NOT\\.nuget\\packages\\",
+        "outputPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\IGOR-NOT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Domain\\MyBank.Domain.csproj": {
+                "projectPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Domain\\MyBank.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.Shared\\MyBank.Infra.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.Shared\\MyBank.Infra.Shared.csproj",
+        "projectName": "MyBank.Infra.Shared",
+        "projectPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.Shared\\MyBank.Infra.Shared.csproj",
+        "packagesPath": "C:\\Users\\IGOR-NOT\\.nuget\\packages\\",
+        "outputPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\IGOR-NOT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Domain\\MyBank.Domain.csproj": {
+                "projectPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Domain\\MyBank.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Service\\MyBank.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Service\\MyBank.Service.csproj",
+        "projectName": "MyBank.Service",
+        "projectPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Service\\MyBank.Service.csproj",
+        "packagesPath": "C:\\Users\\IGOR-NOT\\.nuget\\packages\\",
+        "outputPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\IGOR-NOT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Domain\\MyBank.Domain.csproj": {
+                "projectPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Domain\\MyBank.Domain.csproj"
+              },
+              "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.Shared\\MyBank.Infra.Shared.csproj": {
+                "projectPath": "D:\\AreaDoCodigo\\.Codigos\\Projetos\\MyBank_Project\\Back\\MyBank.Infra.Shared\\MyBank.Infra.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

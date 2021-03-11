@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyBank.Domain\MyBank.Domain.csproj" />
+    <ProjectReference Include="..\MyBank.Infra.Data\MyBank.Infra.Data.csproj" />
+    <ProjectReference Include="..\MyBank.Service\MyBank.Service.csproj" />
+  </ItemGroup>
+
+</Project>
