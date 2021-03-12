@@ -13,10 +13,10 @@ namespace MyBank.Infra.CrossCutting.InversionOfControl
     {
         public static void AddServiceDependency(this IServiceCollection services)
         {
-            services.AddScoped<IServiceCliente, ClienteService>();
-            services.AddScoped<IServiceConta, ContaService>();
-            services.AddScoped<IServiceContaCorrente, ContaCorrenteService>();
-            services.AddScoped<IServiceContaPoupanca, ContaPoupancaService>();
+            services.AddSingleton<IServiceCliente, ClienteService>();
+            services.AddSingleton<IServiceConta, ContaService>();
+            services.AddSingleton<IServiceContaCorrente, ContaCorrenteService>();
+            services.AddSingleton<IServiceContaPoupanca, ContaPoupancaService>();
         }
     }
 }

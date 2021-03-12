@@ -9,7 +9,7 @@ namespace MyBank.Domain.Models
 {
     public class ReturnContaModel
     {
-        public ReturnContaModel(int id, Cliente cliente, int agencia, int numConta, double saldo)
+        public ReturnContaModel(int id, ClienteModel cliente, int agencia, int numConta, double saldo)
         {
             Id = id;
             Cliente = cliente;
@@ -19,7 +19,7 @@ namespace MyBank.Domain.Models
         }
 
         public int Id { get; set; }
-        public Cliente Cliente { get; set; }
+        public ClienteModel Cliente { get; set; }
         public int Agencia { get; set; }
         public int NumConta { get; set; }
         public double Saldo { get; set; }

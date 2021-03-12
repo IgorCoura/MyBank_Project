@@ -11,10 +11,6 @@ namespace MyBank.Infra.Data.Repository
 {
     public class ContaRepository: BaseRepository<Conta, int>, IRepositoryConta
     {
-        //ContaRepository()
-        //{
-        //    //Save(;
-        //}
         public void Save(Conta obj)
         {
             if(obj.Id == 0)

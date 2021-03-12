@@ -1,26 +1,27 @@
-﻿using Aurora.Domain.ValueTypes;
-using MyBank.Domain.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace MyBank.Domain.Entities
+namespace MyBank.Domain.Models
 {
-    public class Cliente
+    public class ClienteModel
     {
-        public Cliente(int id, string nome, CPF cpf, string dataNascimento)
+        public ClienteModel(int id, string nome, string cpf, string dataNascimento)
         {
             Id = id;
             Nome = nome;
             CPF = cpf;
             DataNascimento = dataNascimento;
+
         }
 
         public int Id { get; set; }
         public string Nome { get; set; }
-        public CPF CPF { get; set; }
+        public string CPF { get; set; }
         public string DataNascimento { get; set; }
 
-        
+
     }
 }

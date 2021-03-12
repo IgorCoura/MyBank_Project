@@ -10,7 +10,8 @@ namespace MyBank.Domain.Entities
         {
         }
 
-        public int Rendimento { get; set; }
+        private int rendimento = 12;
 
+        public int Rendimento { get => rendimento; set => rendimento = value; }
     }
 }

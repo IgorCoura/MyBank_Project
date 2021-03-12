@@ -13,8 +13,8 @@ namespace MyBank.Infra.CrossCutting.InversionOfControl
     {
         public static void AddRepositoryDependency(this IServiceCollection services)
         {
-            services.AddScoped<IRepositoryConta, ContaRepository>();
-            services.AddScoped<IRepositoryCliente, ClienteRepository>();
+            services.AddSingleton<IRepositoryConta, ContaRepository>();
+            services.AddSingleton<IRepositoryCliente, ClienteRepository>();
         }
     }
 }

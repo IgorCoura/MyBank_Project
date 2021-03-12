@@ -7,48 +7,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyBank.Application.Api.Controllers
+namespace MyBank.Application.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class ClienteController : Controller
+    public class ContaPoupancaController : ControllerBase
     {
-        private readonly IServiceCliente _serviceCliente;
+        private readonly IServiceContaPoupanca _serviceConta;
 
-        public ClienteController(IServiceCliente serviceCliente)
+        public ContaPoupancaController(IServiceContaPoupanca serviceConta)
         {
-            _serviceCliente = serviceCliente;
+            _serviceConta = serviceConta;
         }
 
         [HttpPost]
-        [AllowAnonymous]
-        public IActionResult RegisterCliente([FromBody] CreateClienteModel clienteModel)
+        [Authorize]
+        public IActionResult RegisterConta([FromBody] CreateContaModel contaModel)
         {
             try
             {
-                var cliente = _serviceCliente.Insert(clienteModel);
-                return Created($"/api/Cadastro/{cliente.Id}", cliente.Id);
+                var conta = _serviceConta.insert(contaModel);
+                return Created($"/api/Cadastro/{conta.Id}", conta.Id);
             }
             catch (Exception e)
             {
                 return BadRequest(e);
             }
         }
+        
 
         [HttpGet]
         public IActionResult RecoverAll()
         {
             try
             {
-                var clientes = _serviceCliente.RecoverAll();
-                return Ok(clientes);
+                var contas = _serviceConta.Recover();
+                return Ok(contas);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return BadRequest(e);
             }
         }
-
     }
 }

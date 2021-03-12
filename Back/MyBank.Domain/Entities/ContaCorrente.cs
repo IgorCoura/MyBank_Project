@@ -10,6 +10,10 @@ namespace MyBank.Domain.Entities
         {
         }
 
-        public int ChequeEspecial { get; set; }
+
+
+        private int ChequeEspecial = 1500;
+
+        public int ChequeEspecial1 { get => ChequeEspecial; set => ChequeEspecial = value; }
     }
 }

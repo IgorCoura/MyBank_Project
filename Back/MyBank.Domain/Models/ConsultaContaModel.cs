@@ -7,17 +7,19 @@ using System.Threading.Tasks;
 
 namespace MyBank.Domain.Models
 {
-    public class TransferContaModel
+    public class ConsultaContaModel
     {
-        public TransferContaModel(Cliente cliente, int agencia, int numConta)
+        public ConsultaContaModel(string cpf, int agencia, int numConta, double valor)
         {
-            Cliente = cliente;
+            Cpf = cpf;
             Agencia = agencia;
             NumConta = numConta;
+            Valor = valor;
         }
 
-        public Cliente Cliente { get; set; }
+        public string Cpf { get; set; }
         public int Agencia { get; set; }
         public int NumConta { get; set; }
+        public double Valor { get; set; }
     }
 }

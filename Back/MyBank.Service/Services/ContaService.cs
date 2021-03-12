@@ -6,6 +6,7 @@ using MyBank.Infra.Shared.Mapper;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using MyBank.Infra.Shared.Mapper;
 
 namespace MyBank.Service.Services
 {
@@ -22,9 +23,17 @@ namespace MyBank.Service.Services
         public ReturnContaModel insert(CreateContaModel createConta)
         {
             var cliente = _serviceCliente.Recover(createConta.Cpf);
-            Conta conta = createConta.ConvertToEntity(cliente);
-            _repositoryConta.Save(conta);
-            return conta.ConvertToReturnModel();
+            if (cliente != null)
+            {
+                Conta conta = createConta.ConvertToEntity(cliente);
+                _repositoryConta.Save(conta);
+                return conta.ConvertToReturnModel();
+            }
+            else
+            {
+                throw new Exception("Cliente is null");
+            }
+
         }
 
         public IEnumerable<ReturnContaModel> Recover()
@@ -33,46 +42,49 @@ namespace MyBank.Service.Services
             return contas.ConvertToReturnModel();
         }
 
-        public ReturnContaModel Login(int clienteId, string senha)
+        public ReturnContaModel Recover(ConsultaContaModel contaModel)
         {
-            return _repositoryConta.Get(clienteId, senha).ConvertToReturnModel();
+            return _repositoryConta.Get(contaModel.Agencia, contaModel.NumConta).ConvertToReturnModel(); ;
         }
         private Conta RecoverConta(int agencia, int numConta)
         {
             return _repositoryConta.Get(agencia, numConta);
         }
 
-        public ReturnContaModel Recover(int agencia, int numConta)
+        public ReturnContaModel Login(int clienteId, string senha)
         {
-            return _repositoryConta.Get(agencia, numConta).ConvertToReturnModel();
+            return _repositoryConta.Get(clienteId, senha).ConvertToReturnModel();
         }
 
-        public void Depositar(TransferContaModel contaModel, double valor)
+
+        public virtual void Depositar(ConsultaContaModel contaModel)
         {
             Conta conta = RecoverConta(contaModel.Agencia, contaModel.NumConta);
-            conta.Saldo += valor;
+            conta.Saldo += contaModel.Valor;
             _repositoryConta.Save(conta);
         }
 
-        public bool Sacar(TransferContaModel contaModel, double valor)
+        public virtual void Sacar(ConsultaContaModel contaModel)
         {
             Conta conta = RecoverConta(contaModel.Agencia, contaModel.NumConta);
-            conta.Saldo -= valor;
-            _repositoryConta.Save(conta);
-            return true;
-        }
-
-        public bool Transferir(TransferContaModel contaModelOrigin, TransferContaModel contaModelDestiny, double valor)
-        {
-            if (Sacar(contaModelOrigin, valor))
-            {
-                Depositar(contaModelDestiny, valor);
-                return true;
+            conta.Saldo -= contaModel.Valor;
+            if (conta.Saldo >= 0)
+            {                
+                _repositoryConta.Save(conta);
             }
             else
             {
-                return false;
+                throw new Exception("Saldo insuficiente.");
             }
+            
+            
+        }
+
+        public virtual void Transferir(ConsultaContaModel contaModelOrigin, ConsultaContaModel contaModelDestiny)
+        {
+            Sacar(contaModelOrigin);
+            contaModelDestiny.Valor = contaModelOrigin.Valor;
+            Depositar(contaModelDestiny);
         }
     }
 }
