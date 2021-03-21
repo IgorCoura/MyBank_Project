@@ -20,7 +20,7 @@ class LoginPage extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: _textFormField("Login", "Digite o Login",
+                child: _textFormField("CPF", "Digite o seu CPF",
                     controller: _ctrlLogin),
               ),
               Padding(

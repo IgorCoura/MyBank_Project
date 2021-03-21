@@ -1,22 +1,13 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:my_bank/api/base_api.dart';
 
 class LoginApi {
   static Future<bool> login(cpf, senha) async {
-    var url = Uri.https('localhost:44337', '/api/Login');
-
-    var header = {"content-type": "application/json"};
-
     Map params = {"cpf": cpf, "senha": senha};
-    var _body = jsonEncode(params);
-
-    var response = await http.post(
-      url,
-      headers: header,
-      body: _body,
-    );
-
+    http.Response response = await BaseApi.apiPost(params, "/api/Login");
+    if (response == null) return false;
     var jsonResponse = jsonDecode(response.body);
     if (response.statusCode == 200) {
       print('Request status: ${response.statusCode}.');
