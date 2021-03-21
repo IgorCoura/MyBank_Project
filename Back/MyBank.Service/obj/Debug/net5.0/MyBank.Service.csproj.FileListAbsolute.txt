@@ -32,3 +32,6 @@ D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Service\bin\Debug\n
 D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Service\bin\Debug\net5.0\MyBank.Domain.pdb
 D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Service\bin\Debug\net5.0\MyBank.Infra.Shared.pdb
 D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Service\obj\Debug\net5.0\MyBank.Service.csproj.CopyComplete
+D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Service\bin\Debug\net5.0\MyBank.Service.runtimeconfig.json
+D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Service\bin\Debug\net5.0\MyBank.Service.runtimeconfig.dev.json
+D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Service\obj\Debug\net5.0\MyBank.Service.genruntimeconfig.cache

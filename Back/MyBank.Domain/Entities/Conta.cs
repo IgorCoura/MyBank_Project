@@ -1,27 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyBank.Domain.Entities
 {
-    public class Conta
+    public class Conta: BaseEntity<int>
     {
-        public Conta(int id, Cliente cliente, int agencia, int numConta, string senha, double saldo)
+        private Conta() { }
+        public Conta(int id, int agencia, int numConta): base(id)
         {
-            Id = id;
-            Cliente = cliente;
             Agencia = agencia;
             NumConta = numConta;
-            Senha = senha;
-            Saldo = saldo;
         }
-
-        public int Id { get; set; }
-        public Cliente Cliente { get; set; }
+        private double saldo = 0;     
         public int Agencia { get; set; }
         public int NumConta { get; set; }
-        public String Senha { get; set; }
-        public double Saldo { get; set; }
+        public double Saldo { get => saldo; set => saldo = value; }
+        public virtual Cliente Cliente { get; set; }
+        public int ClienteId { get; set; }
 
     }
 }

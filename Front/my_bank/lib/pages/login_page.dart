@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_bank/api/login_api.dart';
+import 'package:my_bank/pages/cadastro_page.dart';
 import 'package:my_bank/pages/home_page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -37,7 +38,20 @@ class LoginPage extends StatelessWidget {
                   onPressed: () => _clickButton(context),
                   child: Text("Login"),
                 ),
-              )
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(64.0, 8.0, 64.0, 8.0),
+                child: GestureDetector(
+                  onTap: () => _clickCadastro(context),
+                  child: Center(
+                    child: Text(
+                      "Cadastre-se no MyBank",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue),
+                    ),
+                  ),
+                ),
+              ),
             ],
           )),
     );
@@ -74,5 +88,10 @@ class LoginPage extends StatelessWidget {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => HomePage()));
     }
+  }
+
+  _clickCadastro(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => CadastroPage()));
   }
 }

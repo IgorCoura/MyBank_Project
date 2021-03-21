@@ -1,22 +1,19 @@
-﻿using Aurora.Domain.ValueTypes;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MyBank.Domain.Models
+﻿namespace MyBank.Domain.Models
 {
     public class CreateClienteModel
     {
-        public CreateClienteModel(string nome, string cpf, string dataNascimento)
+        public CreateClienteModel(string nome, string cpf, string dataNascimento, string senha)
         {
             Nome = nome;
             CPF = cpf;
             DataNascimento = dataNascimento;
+            Senha = senha;
         }
 
         public string Nome { get; set; }
         public string CPF { get; set; }
         public string DataNascimento { get; set; }
+        public string Senha { get; set; }
 
     }
 }

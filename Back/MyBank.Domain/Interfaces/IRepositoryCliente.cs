@@ -1,10 +1,6 @@
-﻿using Aurora.Domain.ValueTypes;
-using MyBank.Domain.Entities;
+﻿using MyBank.Domain.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyBank.Domain.Interfaces
 {
@@ -16,8 +12,8 @@ namespace MyBank.Domain.Interfaces
         public void Save(Cliente obj);
 
         public Cliente Get(int id);
-        public Cliente Get(CPF cpf);
-
+        public Cliente Get(string cpf, string senha);
+        public Cliente Get(string token);
         public IList<Cliente> Get();
     }
 }

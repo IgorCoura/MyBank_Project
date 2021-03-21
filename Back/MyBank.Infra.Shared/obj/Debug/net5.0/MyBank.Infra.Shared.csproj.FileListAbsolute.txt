@@ -28,3 +28,6 @@ D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Infra.Shared\bin\De
 D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Infra.Shared\bin\Debug\net5.0\MyBank.Domain.dll
 D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Infra.Shared\bin\Debug\net5.0\MyBank.Domain.pdb
 D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Infra.Shared\obj\Debug\net5.0\MyBank.Infra.Shared.csproj.CopyComplete
+D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Infra.Shared\bin\Debug\net5.0\MyBank.Infra.Shared.runtimeconfig.json
+D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Infra.Shared\bin\Debug\net5.0\MyBank.Infra.Shared.runtimeconfig.dev.json
+D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Infra.Shared\obj\Debug\net5.0\MyBank.Infra.Shared.genruntimeconfig.cache

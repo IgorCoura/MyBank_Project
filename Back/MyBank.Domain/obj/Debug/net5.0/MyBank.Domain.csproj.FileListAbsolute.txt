@@ -22,3 +22,6 @@ D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Domain\bin\Debug\ne
 D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Domain\bin\Debug\net5.0\MyBank.Domain.dll
 D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Domain\bin\Debug\net5.0\ref\MyBank.Domain.dll
 D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Domain\bin\Debug\net5.0\MyBank.Domain.pdb
+D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Domain\bin\Debug\net5.0\MyBank.Domain.runtimeconfig.json
+D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Domain\bin\Debug\net5.0\MyBank.Domain.runtimeconfig.dev.json
+D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Domain\obj\Debug\net5.0\MyBank.Domain.genruntimeconfig.cache

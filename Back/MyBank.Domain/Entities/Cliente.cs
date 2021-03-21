@@ -1,26 +1,28 @@
-﻿using Aurora.Domain.ValueTypes;
-using MyBank.Domain.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MyBank.Domain.Entities
 {
-    public class Cliente
+    public class Cliente: BaseEntity<int>
     {
-        public Cliente(int id, string nome, CPF cpf, string dataNascimento)
+        private Cliente() { }
+
+        public Cliente(int id, string nome, string cpf, string dataNascimento, string senha): base(id)
         {
-            Id = id;
             Nome = nome;
             CPF = cpf;
             DataNascimento = dataNascimento;
+            Senha = senha;
         }
 
-        public int Id { get; set; }
         public string Nome { get; set; }
-        public CPF CPF { get; set; }
+        public string CPF { get; set; }
         public string DataNascimento { get; set; }
+        public string Senha { get; set; }
+        public string Token { get; set; }
+        public DateTime ExpirationToken { get; set; }
+        public virtual IList<Conta> Conta { get; set; }
 
-        
+
     }
 }

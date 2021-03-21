@@ -3,15 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using MyBank.Domain.Interfaces;
 using MyBank.Domain.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MyBank.Application.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class ClienteController : Controller
     {
         private readonly IServiceCliente _serviceCliente;
@@ -23,7 +20,7 @@ namespace MyBank.Application.Api.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public IActionResult RegisterCliente([FromBody] CreateClienteModel clienteModel)
+        public IActionResult RegisterCliente([FromBody]CreateClienteModel clienteModel)
         {
             try
             {

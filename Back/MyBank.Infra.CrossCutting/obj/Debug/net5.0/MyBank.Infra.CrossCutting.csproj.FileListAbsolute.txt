@@ -19,3 +19,6 @@ D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Infra.CrossCutting\
 D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Infra.CrossCutting\obj\Debug\net5.0\MyBank.Infra.CrossCutting.dll
 D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Infra.CrossCutting\obj\Debug\net5.0\ref\MyBank.Infra.CrossCutting.dll
 D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Infra.CrossCutting\obj\Debug\net5.0\MyBank.Infra.CrossCutting.pdb
+D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Infra.CrossCutting\bin\Debug\net5.0\MyBank.Infra.CrossCutting.runtimeconfig.json
+D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Infra.CrossCutting\bin\Debug\net5.0\MyBank.Infra.CrossCutting.runtimeconfig.dev.json
+D:\AreaDoCodigo\.Codigos\Projetos\MyBank_Project\Back\MyBank.Infra.CrossCutting\obj\Debug\net5.0\MyBank.Infra.CrossCutting.genruntimeconfig.cache

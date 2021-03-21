@@ -1,27 +1,20 @@
-﻿using Aurora.Domain.ValueTypes;
-using MyBank.Domain.Entities;
+﻿using MyBank.Domain.Entities;
 using MyBank.Domain.Interfaces;
+using MyBank.Infra.Data.Context;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyBank.Infra.Data.Repository
 {
     public class ClienteRepository : BaseRepository<Cliente, int>, IRepositoryCliente
     {
-        //TODO: Integrar o repository cliente com o banco de dados
+        public ClienteRepository(SqlServerContext sqlContext) : base(sqlContext)
+        {
+        }
 
-        //ClienteRepository()
-        //{
-        //    //Save();
-        //}
-
-        int newId = 1;
         public void Remove(int id)
         {
-            base.Delete(x => x.Id == id);
+            base.Delete(id);
         }
 
         public void Save(Cliente obj)
@@ -29,19 +22,20 @@ namespace MyBank.Infra.Data.Repository
             
             if(obj.Id == 0)
             {
-                obj.Id = newId;
-                newId++;
                 base.Insert(obj);
             }
             else
             {
-                base.Update(obj, x => x.Id == obj.Id);
+                base.Update(obj);
             }            
         }
 
         public Cliente Get(int id) => base.Select(x => x.Id == id);
-        public Cliente Get(CPF cpf) => base.Select(x => x.CPF.ToString() == cpf.ToString());
-
+        public Cliente Get(string cpf, string senha) => base.Select(x => x.CPF == cpf && x.Senha == senha);
+        public Cliente Get(string token) {
+            var timeNow = DateTime.UtcNow;
+            return base.Select(x => x.Token == token && x.ExpirationToken > timeNow); 
+        }
         public IList<Cliente> Get() => base.Select();
              
     }

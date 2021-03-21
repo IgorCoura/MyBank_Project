@@ -1,9 +1,5 @@
 ﻿using MyBank.Domain.Entities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyBank.Domain.Interfaces
 {
@@ -16,7 +12,6 @@ namespace MyBank.Domain.Interfaces
         public IEnumerable<Conta> Get();
 
         public Conta Get(int id);
-        public Conta Get(int clienteID, string senha);
         public Conta Get(int agencia, int numConta);
     }
 }
