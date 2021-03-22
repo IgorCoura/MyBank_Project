@@ -8,8 +8,8 @@ namespace MyBank.Domain.Interfaces
     {
         public ClienteModel Insert(CreateClienteModel createCliente);
         public IEnumerable<ClienteModel> RecoverAll();
-        public ClienteModel Recover(int id);
-        public RespostaLoginModel Login(string cpf, string senha);
+        public ClienteModel Recover(TokenModel token);
+        public RespostaLoginModel Login(LoginModel loginModel);
         public void Delete(int id);
 
     }

@@ -33,7 +33,7 @@ namespace MyBank.Application.Api.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("RecoverAll")]
         public IActionResult RecoverAll()
         {
             try
@@ -42,6 +42,21 @@ namespace MyBank.Application.Api.Controllers
                 return Ok(clientes);
             }
             catch(Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+
+        [HttpGet("RecoverByToken")]
+        public IActionResult Recover(string TT)
+        {
+            try
+            {
+                TokenModel token = new TokenModel(TT);
+                var cliente = _serviceCliente.Recover(token);
+                return Ok(cliente);
+            }
+            catch (Exception e)
             {
                 return BadRequest(e);
             }

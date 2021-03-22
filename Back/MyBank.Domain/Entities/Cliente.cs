@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aurora.Domain.ValueTypes;
+using System;
 using System.Collections.Generic;
 
 namespace MyBank.Domain.Entities
@@ -7,7 +8,7 @@ namespace MyBank.Domain.Entities
     {
         private Cliente() { }
 
-        public Cliente(int id, string nome, string cpf, string dataNascimento, string senha): base(id)
+        public Cliente(int id, string nome, CPF cpf, string dataNascimento, string senha): base(id)
         {
             Nome = nome;
             CPF = cpf;
@@ -16,7 +17,7 @@ namespace MyBank.Domain.Entities
         }
 
         public string Nome { get; set; }
-        public string CPF { get; set; }
+        public CPF CPF { get; set; }
         public string DataNascimento { get; set; }
         public string Senha { get; set; }
         public string Token { get; set; }

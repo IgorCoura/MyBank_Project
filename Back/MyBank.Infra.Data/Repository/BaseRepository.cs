@@ -33,8 +33,11 @@ namespace MyBank.Infra.Data.Repository
             _sqlContext.SaveChanges();
         }
 
-        protected virtual IList<TEntity> Select() =>
+        protected virtual IList<TEntity> SelectList() =>
             _sqlContext.Set<TEntity>().ToList();
+
+        protected virtual IList<TEntity> SelectList(Func<TEntity, bool> p) =>
+            _sqlContext.Set<TEntity>().Where(p).ToList();
 
         protected virtual TEntity Select(Func<TEntity, bool> p) =>
             _sqlContext.Set<TEntity>().Single(p);

@@ -14,7 +14,7 @@ namespace MyBank.Infra.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CPF = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CPF = table.Column<string>(type: "varchar(11)", nullable: false),
                     DataNascimento = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Senha = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Token = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -31,8 +31,8 @@ namespace MyBank.Infra.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Agencia = table.Column<int>(type: "int", nullable: false),
-                    NumeroConta = table.Column<int>(type: "int", nullable: false),
+                    Agencia = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NumeroConta = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Saldo = table.Column<double>(type: "float", nullable: false),
                     ClienteId = table.Column<int>(type: "int", nullable: false)
                 },

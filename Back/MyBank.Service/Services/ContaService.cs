@@ -23,7 +23,7 @@ namespace MyBank.Service.Services
 
         }
 
-        public ReturnContaModel insert(CreateContaModel createConta)
+        public ContaModel insert(TokenModel createConta)
         {
             string agencia = "0001";
             string NumConta = geradorNumeroConta();
@@ -33,13 +33,13 @@ namespace MyBank.Service.Services
             return conta.ConvertToReturnModel();
         }
 
-        public IEnumerable<ReturnContaModel> Recover()
+        public IEnumerable<ContaModel> Recover()
         {
             IEnumerable<Conta> contas = _repositoryConta.Get();
             return contas.ConvertToReturnModel();
         }
 
-        public ReturnContaModel Recover(int id)
+        public ContaModel Recover(int id)
         {
             var conta = _repositoryConta.Get(id);
             return conta.ConvertToReturnModel(); ;
@@ -97,8 +97,17 @@ namespace MyBank.Service.Services
                         resp += Verhoeff(array);
                     }
                 }
-                if(_repositoryConta.Get(resp) == null)
+                try
                 {
+                    var conta = _repositoryConta.Get(resp);
+                    if(conta == null)
+                    {
+                        return resp;
+                    }
+
+                }catch(Exception e)
+                {
+                    Console.WriteLine(e);
                     return resp;
                 }
             }          

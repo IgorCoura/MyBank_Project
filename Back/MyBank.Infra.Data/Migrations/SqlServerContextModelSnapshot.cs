@@ -28,7 +28,7 @@ namespace MyBank.Infra.Data.Migrations
 
                     b.Property<string>("CPF")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("varchar(11)")
                         .HasColumnName("CPF");
 
                     b.Property<string>("DataNascimento")
@@ -66,15 +66,17 @@ namespace MyBank.Infra.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Agencia")
-                        .HasColumnType("int")
+                    b.Property<string>("Agencia")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("Agencia");
 
                     b.Property<int>("ClienteId")
                         .HasColumnType("int");
 
-                    b.Property<int>("NumConta")
-                        .HasColumnType("int")
+                    b.Property<string>("NumConta")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("NumeroConta");
 
                     b.Property<double>("Saldo")

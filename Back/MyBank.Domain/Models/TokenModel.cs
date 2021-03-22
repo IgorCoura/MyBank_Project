@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace MyBank.Domain.Models
 {
-    public class CreateContaModel
+    public class TokenModel
     {
         public string token { get; set; }
 
-        public CreateContaModel(string token)
+        public TokenModel(string token)
         {
             this.token = token;
         }

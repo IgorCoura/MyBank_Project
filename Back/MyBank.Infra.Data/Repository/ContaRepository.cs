@@ -29,7 +29,8 @@ namespace MyBank.Infra.Data.Repository
             base.Delete(id);
         }
 
-        public IEnumerable<Conta> Get() => base.Select();
+        public IEnumerable<Conta> Get() => base.SelectList();
+        public IEnumerable<Conta> GetList(int clinteId) => base.SelectList(x => x.ClienteId == clinteId);
         public Conta Get(int id) => base.Select(x => x.Id == id);
         public Conta Get(string NumConta) => base.Select(p => p.NumConta == NumConta);
         public Conta Get(string agencia, string numConta) => base.Select(x => x.Agencia == agencia && x.NumConta == numConta);

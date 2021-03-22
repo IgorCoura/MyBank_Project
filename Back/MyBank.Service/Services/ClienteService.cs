@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Aurora.Domain.ValueTypes;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using MyBank.Domain.Entities;
 using MyBank.Domain.Interfaces;
@@ -15,14 +16,14 @@ namespace MyBank.Service.Services
     public class ClienteService : IServiceCliente
     {
         private readonly IRepositoryCliente _repositoryCliente;
+        private readonly IRepositoryConta _repositoryConta;
         private readonly IConfiguration _configuration;
 
-        //TODO: add Update cliente
-
-        public ClienteService(IRepositoryCliente repositoryCliente, IConfiguration configuration)
+        public ClienteService(IRepositoryCliente repositoryCliente, IConfiguration configuration, IRepositoryConta repositoryConta)
         {
-            this._repositoryCliente = repositoryCliente;
+            _repositoryCliente = repositoryCliente;
             _configuration = configuration;
+            _repositoryConta = repositoryConta;
         }
 
         public ClienteModel Insert(CreateClienteModel createCliente)
@@ -40,15 +41,19 @@ namespace MyBank.Service.Services
             return cliente.ConvertToModel();
         }
 
-        public ClienteModel Recover(int id)
+        public ClienteModel Recover(TokenModel token)
         {
-            return _repositoryCliente.Get(id).ConvertToModel();
+           var cliente = _repositoryCliente.Get(token.token);
+            //TODO: Criar um convert conta
+           cliente.Conta = (IList<Conta>)_repositoryConta.GetList(cliente.Id);
+           return cliente.ConvertToModel();
         }
         
 
-        public RespostaLoginModel Login(string cpf, string senha)
+        public RespostaLoginModel Login(LoginModel loginModel)
         {
-            var cliente = _repositoryCliente.Get(cpf, senha);
+            CPF cpf = loginModel.CPF;
+            var cliente = _repositoryCliente.Get(cpf, loginModel.Senha);
             var expires = DateTime.UtcNow.AddMinutes(60);
             if (cliente != null)
             {
@@ -57,7 +62,7 @@ namespace MyBank.Service.Services
                 var securityTokenDescriptor = new SecurityTokenDescriptor
                 {
                     Subject = new ClaimsIdentity(new Claim[] {
-                        new Claim(ClaimTypes.NameIdentifier, cpf.ToString()),
+                        new Claim(ClaimTypes.NameIdentifier, loginModel.CPF.ToString()),
                         new Claim(ClaimTypes.Role, "Cliente") }),
                     Expires = expires,
                     SigningCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256)

@@ -1,4 +1,5 @@
-﻿using MyBank.Domain.Entities;
+﻿using Aurora.Domain.ValueTypes;
+using MyBank.Domain.Entities;
 using MyBank.Domain.Interfaces;
 using MyBank.Infra.Data.Context;
 using System;
@@ -31,12 +32,12 @@ namespace MyBank.Infra.Data.Repository
         }
 
         public Cliente Get(int id) => base.Select(x => x.Id == id);
-        public Cliente Get(string cpf, string senha) => base.Select(x => x.CPF == cpf && x.Senha == senha);
+        public Cliente Get(CPF cpf, string senha) => base.Select(x => x.CPF == cpf && x.Senha == senha);
         public Cliente Get(string token) {
             var timeNow = DateTime.UtcNow;
             return base.Select(x => x.Token == token && x.ExpirationToken > timeNow); 
         }
-        public IList<Cliente> Get() => base.Select();
+        public IList<Cliente> Get() => base.SelectList();
              
     }
 }

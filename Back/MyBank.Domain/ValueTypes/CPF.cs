@@ -9,7 +9,8 @@ namespace Aurora.Domain.ValueTypes
 
         private CPF(string value)
         {
-            _value = value;
+            _value = value.Trim();
+            _value = _value.Replace(".", "").Replace("-", "");
             Validate();
         }
 
@@ -18,6 +19,10 @@ namespace Aurora.Domain.ValueTypes
 
         public static implicit operator CPF(string input) =>
             new CPF(input);
+
+        public static bool operator ==(CPF c1, CPF c2) => c1.ToString() == c2.ToString();
+        public static bool operator !=(CPF c1, CPF c2) => c1.ToString() != c2.ToString();
+
 
         private void Validate()
         {
@@ -33,8 +38,7 @@ namespace Aurora.Domain.ValueTypes
             string digit;
             int sum, rest;
 
-            var value = _value.Trim();
-            value = _value.Replace(".", "").Replace("-", "");
+            var value = _value;
 
             if (value.Length != 11)
             {

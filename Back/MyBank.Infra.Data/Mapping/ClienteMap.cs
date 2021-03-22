@@ -17,8 +17,10 @@ namespace MyBank.Infra.Data
                 .HasColumnName("Nome");
 
             builder.Property(prop => prop.CPF)
+                .HasConversion(prop => prop.ToString(), prop => prop)
                 .IsRequired()
-                .HasColumnName("CPF");
+                .HasColumnName("CPF")
+                .HasColumnType("varchar(11)");
 
             builder.Property(prop => prop.DataNascimento)
                 .IsRequired()

@@ -1,8 +1,8 @@
 ﻿namespace MyBank.Domain.Models
 {
-    public class ReturnContaModel
+    public class ContaModel
     {
-        public ReturnContaModel(int id, string agencia, string numConta, double saldo)
+        public ContaModel(int id, string agencia, string numConta, double saldo)
         {
             Id = id;
             Agencia = agencia;

@@ -19,7 +19,7 @@ namespace MyBank.Application.Api.Controllers
         }
 
         [HttpPost("Register")]        
-        public IActionResult CreateConta([FromBody] CreateContaModel contaModel)
+        public IActionResult CreateConta([FromBody] TokenModel contaModel)
         {
             try
             {

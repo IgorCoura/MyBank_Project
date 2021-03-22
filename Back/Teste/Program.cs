@@ -7,9 +7,7 @@ namespace Teste
     {
         static void Main(string[] args)
         {
-            ContaService conta = new ContaService();
-            var a = conta.geradorNumeroConta();
-            Console.WriteLine(a);
+
         }
     }
 }
