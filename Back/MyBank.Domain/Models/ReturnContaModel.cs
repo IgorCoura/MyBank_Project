@@ -2,7 +2,7 @@
 {
     public class ReturnContaModel
     {
-        public ReturnContaModel(int id, int agencia, int numConta, double saldo)
+        public ReturnContaModel(int id, string agencia, string numConta, double saldo)
         {
             Id = id;
             Agencia = agencia;
@@ -11,8 +11,8 @@
         }
 
         public int Id { get; set; }
-        public int Agencia { get; set; }
-        public int NumConta { get; set; }
+        public string Agencia { get; set; }
+        public string NumConta { get; set; }
         public double Saldo { get; set; }
     }
 }

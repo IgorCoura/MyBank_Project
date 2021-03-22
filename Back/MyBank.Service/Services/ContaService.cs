@@ -12,16 +12,23 @@ namespace MyBank.Service.Services
     {
         private readonly IRepositoryConta _repositoryConta;
         private readonly IRepositoryCliente _repositoryCliente;
+        private readonly Random random = new Random(); 
         public ContaService(IRepositoryConta repositoryConta, IRepositoryCliente repositoryCliente)
         {
             _repositoryConta = repositoryConta;
             _repositoryCliente = repositoryCliente;
         }
+        public ContaService()
+        {
+
+        }
 
         public ReturnContaModel insert(CreateContaModel createConta)
         {
-            var conta = createConta.ConvertToEntity();
-            conta.Cliente =_repositoryCliente.Get(createConta.Token);
+            string agencia = "0001";
+            string NumConta = geradorNumeroConta();
+            var conta = new Conta(0, agencia, NumConta);
+            conta.Cliente =_repositoryCliente.Get(createConta.token);
             _repositoryConta.Save(conta);
             return conta.ConvertToReturnModel();
         }
@@ -37,7 +44,7 @@ namespace MyBank.Service.Services
             var conta = _repositoryConta.Get(id);
             return conta.ConvertToReturnModel(); ;
         }
-        private Conta RecoverConta(int agencia, int numConta)
+        private Conta RecoverConta(string agencia, string numConta)
         {
             return _repositoryConta.Get(agencia, numConta);
         }
@@ -70,6 +77,85 @@ namespace MyBank.Service.Services
             Sacar(contaModelOrigin);
             contaModelDestiny.Valor = contaModelOrigin.Valor;
             Depositar(contaModelDestiny);
+        }
+
+        private string geradorNumeroConta()
+        {
+            while(true)
+            {
+                string resp = "";
+                int[] array = new int[7];
+                for (int i = 0; i < 8; i++)
+                {
+                    if (i < 7)
+                    {
+                        array[i] = random.Next(0, 9);
+                        resp += array[i].ToString();
+                    }
+                    else
+                    {
+                        resp += Verhoeff(array);
+                    }
+                }
+                if(_repositoryConta.Get(resp) == null)
+                {
+                    return resp;
+                }
+            }          
+        }
+
+        private int Verhoeff(int[] cadeia)
+        {
+            int[,] TLOCAL = new int[8,10]{ 
+                {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, 
+                {1, 5, 7, 6, 2, 8, 3, 0, 9, 4},
+                {5, 8, 0, 3, 7, 9, 6, 1, 4, 2},
+                {8, 9, 1, 6, 0, 4, 3, 5, 2, 7},
+                {9, 4, 5, 3, 1, 2, 6, 8, 7, 0},
+                {4, 2, 8, 6, 5, 7, 3, 9, 0, 1},
+                {2, 7, 9, 3, 8, 0, 6, 4, 1, 5},
+                {7, 0, 4, 6, 9, 1, 3, 2, 5, 8},
+            };
+
+            int[,] TINVER = new int[10, 10]
+            {
+                {0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
+                {1, 2, 3, 4, 0, 6, 7, 8, 9, 5},
+                {2, 3, 4, 0, 1, 7, 8, 9, 5, 6},
+                {3, 4, 0, 1, 2, 8, 9, 5, 6, 7},
+                {4, 0, 1, 2, 3, 9, 5, 6, 7, 8},
+                {5, 9, 8, 7, 6, 0, 4, 3, 2, 1},
+                {6, 5, 9, 8, 7, 1, 0, 4, 3, 2},
+                {7, 6, 5, 9, 8, 2, 1, 0, 4, 3},
+                {8, 7, 6, 5, 9, 3, 2, 1, 0, 4},
+                {9, 8, 7, 6, 5, 4, 3, 2, 1, 0},
+            };
+            int[] TDIVER = new int[10] {0, 4, 3, 2, 1, 5, 6, 7, 8, 9};
+
+            int contador = 1;
+            int[] INVER = new int[cadeia.Length+1];
+            INVER[0] = 0;
+            for(int i = cadeia.Length-1; i >= 0; i--)
+            {     
+                INVER[contador] = cadeia[i];
+                contador++;
+            }
+
+            int linha = 0;
+            int[] inLocal = new int[cadeia.Length+1];
+            int[] valorVerificador = new int[cadeia.Length + 2];
+            valorVerificador[0] = 0;
+            for(int i = 0; i < INVER.Length; i++)
+            {
+                if(linha > 7)
+                {
+                    linha = 0;
+                }
+                inLocal[i] = TLOCAL[linha, INVER[i]];
+                valorVerificador[i + 1] = TINVER[valorVerificador[i], inLocal[i]];                
+                linha++;
+            }
+            return TDIVER[valorVerificador[cadeia.Length+1]];
         }
     }
 }

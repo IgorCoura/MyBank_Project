@@ -2,7 +2,7 @@
 {
     public class ConsultaContaModel
     {
-        public ConsultaContaModel(string cpf, int agencia, int numConta, double valor)
+        public ConsultaContaModel(string cpf, string agencia, string numConta, double valor)
         {
             Cpf = cpf;
             Agencia = agencia;
@@ -11,8 +11,8 @@
         }
 
         public string Cpf { get; set; }
-        public int Agencia { get; set; }
-        public int NumConta { get; set; }
+        public string Agencia { get; set; }
+        public string NumConta { get; set; }
         public double Valor { get; set; }
     }
 }

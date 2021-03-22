@@ -1,6 +1,7 @@
 ﻿using MyBank.Domain.Entities;
 using MyBank.Domain.Interfaces;
 using MyBank.Infra.Data.Context;
+using System;
 using System.Collections.Generic;
 
 namespace MyBank.Infra.Data.Repository
@@ -30,7 +31,8 @@ namespace MyBank.Infra.Data.Repository
 
         public IEnumerable<Conta> Get() => base.Select();
         public Conta Get(int id) => base.Select(x => x.Id == id);
-        public Conta Get(int agencia, int numConta) => base.Select(x => x.Agencia == agencia && x.NumConta == numConta);
+        public Conta Get(string NumConta) => base.Select(p => p.NumConta == NumConta);
+        public Conta Get(string agencia, string numConta) => base.Select(x => x.Agencia == agencia && x.NumConta == numConta);
         
     }
 }

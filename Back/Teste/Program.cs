@@ -1,6 +1,4 @@
-﻿using MyBank.Domain.Entities;
-using MyBank.Domain.Models;
-using MyBank.Infra.Data.Context;
+﻿using MyBank.Service.Services;
 using System;
 
 namespace Teste
@@ -9,9 +7,9 @@ namespace Teste
     {
         static void Main(string[] args)
         {
-            ClienteModel clienteModel = new ClienteModel(10, "aaaa", "cpf", "birth");
-
-           
+            ContaService conta = new ContaService();
+            var a = conta.geradorNumeroConta();
+            Console.WriteLine(a);
         }
     }
 }
