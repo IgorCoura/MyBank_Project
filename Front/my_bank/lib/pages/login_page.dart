@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_bank/api/home_api.dart';
 import 'package:my_bank/api/login_api.dart';
+import 'package:my_bank/layout/colors_layout.dart';
 import 'package:my_bank/pages/cadastro_page.dart';
 import 'package:my_bank/pages/home_page.dart';
 
@@ -12,48 +14,64 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Acesso ao My"),
+        title: Text("Acesso ao MyBank"),
+        backgroundColor: ColorsLayout.primaryColor(),
       ),
-      body: Form(
-          key: _formKey,
-          child: ListView(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _textFormField("CPF", "Digite o seu CPF",
-                    controller: _ctrlLogin),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _textFormField(
-                  "Senha",
-                  "Digite a Senha",
-                  senha: true,
-                  controller: _ctrlSenha,
+      body: Container(
+        child: Form(
+            key: _formKey,
+            child: ListView(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: _textFormField("CPF", "Digite o seu CPF",
+                      controller: _ctrlLogin),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(64.0, 8.0, 64.0, 8.0),
-                child: ElevatedButton(
-                  onPressed: () => _clickButton(context),
-                  child: Text("Login"),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: _textFormField(
+                    "Senha",
+                    "Digite a Senha",
+                    senha: true,
+                    controller: _ctrlSenha,
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(64.0, 8.0, 64.0, 8.0),
-                child: GestureDetector(
-                  onTap: () => _clickCadastro(context),
-                  child: Center(
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(64.0, 8.0, 64.0, 8.0),
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18.0),
+                              side: BorderSide(
+                                  color: ColorsLayout.primaryColor()))),
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.white),
+                    ),
+                    onPressed: () => _clickButton(context),
                     child: Text(
-                      "Cadastre-se no MyBank",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.blue),
+                      "Login",
+                      style: TextStyle(color: ColorsLayout.primaryColor()),
                     ),
                   ),
                 ),
-              ),
-            ],
-          )),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(64.0, 8.0, 64.0, 8.0),
+                  child: GestureDetector(
+                    onTap: () => _clickCadastro(context),
+                    child: Center(
+                      child: Text(
+                        "Cadastre-se no MyBank",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: ColorsLayout.primaryColor()),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            )),
+      ),
     );
   }
 
@@ -84,9 +102,9 @@ class LoginPage extends StatelessWidget {
 
     var response = await LoginApi.login(login, senha);
 
-    if (response) {
+    if (response != null) {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
+          context, MaterialPageRoute(builder: (context) => HomePage(response)));
     }
   }
 

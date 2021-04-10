@@ -48,12 +48,11 @@ namespace MyBank.Application.Api.Controllers
         }
 
         [HttpGet("RecoverByToken")]
-        public IActionResult Recover(string TT)
+        public IActionResult Recover(string token)
         {
             try
             {
-                TokenModel token = new TokenModel(TT);
-                var cliente = _serviceCliente.Recover(token);
+                var cliente = _serviceCliente.Recover(new TokenModel(token));
                 return Ok(cliente);
             }
             catch (Exception e)

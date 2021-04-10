@@ -44,9 +44,9 @@ namespace MyBank.Service.Services
         public ClienteModel Recover(TokenModel token)
         {
            var cliente = _repositoryCliente.Get(token.token);
-            //TODO: Criar um convert conta
-           cliente.Conta = (IList<Conta>)_repositoryConta.GetList(cliente.Id);
-           return cliente.ConvertToModel();
+           var clienteModel = cliente.ConvertToModel();
+           clienteModel.ContaModel = (IList<ContaModel>)_repositoryConta.GetList(cliente.Id).ConvertToReturnModel();
+           return clienteModel;
         }
         
 

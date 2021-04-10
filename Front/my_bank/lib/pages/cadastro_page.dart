@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_bank/api/cadastro_api.dart';
+import 'package:my_bank/layout/colors_layout.dart';
 
 class CadastroPage extends StatelessWidget {
   final _ctrlNome = TextEditingController();
@@ -14,6 +15,7 @@ class CadastroPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Cadastro"),
+        backgroundColor: ColorsLayout.primaryColor(),
       ),
       body: Form(
           key: _formKey,
@@ -49,8 +51,20 @@ class CadastroPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(64.0, 8.0, 64.0, 8.0),
                 child: ElevatedButton(
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(
+                                color: ColorsLayout.primaryColor()))),
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                  ),
                   onPressed: () => _clickButton(context),
-                  child: Text("Login"),
+                  child: Text(
+                    "Login",
+                    style: TextStyle(color: ColorsLayout.primaryColor()),
+                  ),
                 ),
               ),
             ],
