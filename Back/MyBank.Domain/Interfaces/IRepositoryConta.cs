@@ -7,12 +7,11 @@ namespace MyBank.Domain.Interfaces
     {
         public void Save(Conta obj);
 
-        public void Remove(int id);
+        public void Remove(string agencia, string numConta);
 
         public IEnumerable<Conta> Get();
         public IEnumerable<Conta> GetList(int clinteId);
         public Conta Get(int id);
-        public Conta Get(string numConta);
         public Conta Get(string agencia, string numConta);
     }
 }

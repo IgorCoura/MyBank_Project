@@ -15,7 +15,7 @@ namespace MyBank.Infra.Data.Repository
 
         public void Remove(int id)
         {
-            base.Delete(id);
+            base.Delete(x => x.Id == id);
         }
 
         public void Save(Cliente obj)

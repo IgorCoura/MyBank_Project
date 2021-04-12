@@ -27,9 +27,9 @@ namespace MyBank.Infra.Data.Repository
             _sqlContext.SaveChanges();
         }
 
-        protected virtual void Delete(TKeyType id)
+        protected virtual void Delete(Func<TEntity, bool> p)
         {
-            _sqlContext.Set<TEntity>().Remove(_sqlContext.Set<TEntity>().Find(id));
+            _sqlContext.Set<TEntity>().Remove(_sqlContext.Set<TEntity>().Single(p));
             _sqlContext.SaveChanges();
         }
 

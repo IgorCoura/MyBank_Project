@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:my_bank/pages/conta_page.dart';
 
 class ContaWidget extends StatelessWidget {
   final Map data;
-  ContaWidget(this.data);
+  final String token;
+  ContaWidget(
+    this.data,
+    this.token,
+  );
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => {},
+      onTap: () => {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => ContaPage(data, token)))
+      },
       child: Container(
         padding: const EdgeInsets.all(16.0),
         margin: const EdgeInsets.all(20),

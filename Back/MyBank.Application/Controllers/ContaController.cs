@@ -32,12 +32,26 @@ namespace MyBank.Application.Api.Controllers
             }
         }
 
+        [HttpDelete("Deletar")]
+        public IActionResult RemoveConta([FromBody] DeleteContaModel contaModel)
+        {
+            try
+            {
+                _serviceConta.delete(contaModel);
+                return Ok();
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+
         [HttpGet("Recover")]
         public IActionResult Recover()
         {
             try
             {
-                var conta = _serviceConta.Recover();
+                var conta = _serviceConta.recover();
                 return Ok(conta);
             }
             catch(Exception e)
@@ -51,7 +65,7 @@ namespace MyBank.Application.Api.Controllers
         {
             try
             {
-                var contas = _serviceConta.Recover();
+                var contas = _serviceConta.recover();
                 return Ok(contas);
             }
             catch(Exception e)

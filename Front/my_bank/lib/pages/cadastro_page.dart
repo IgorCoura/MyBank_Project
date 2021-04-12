@@ -40,13 +40,13 @@ class CadastroPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: _textFormField("Senha", "Digite sua senha.",
-                    controller: _ctrlSenha),
+                    controller: _ctrlSenha, senha: true),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: _textFormField(
                     "Confirmar senha", "Digite novamente a senha",
-                    controller: _ctrlSenhaConfirma),
+                    controller: _ctrlSenhaConfirma, senha: true),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(64.0, 8.0, 64.0, 8.0),
@@ -62,7 +62,7 @@ class CadastroPage extends StatelessWidget {
                   ),
                   onPressed: () => _clickButton(context),
                   child: Text(
-                    "Login",
+                    "Cadastrar",
                     style: TextStyle(color: ColorsLayout.primaryColor()),
                   ),
                 ),

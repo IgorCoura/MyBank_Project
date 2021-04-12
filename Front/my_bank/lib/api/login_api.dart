@@ -6,7 +6,9 @@ import 'package:my_bank/api/home_api.dart';
 
 class LoginApi {
   static Future<Map<String, dynamic>> login(cpf, senha) async {
-    Map params = {"cpf": "67728949012", "senha": "123789"};
+    //Map params = {"cpf": "67728949012", "senha": "123789"};
+    Map params = {"cpf": "30324829094", "senha": "123456"};
+    //Map params = {"cpf": cpf, "senha": senha};
 
     http.Response response = await BaseApi.apiPost(params, "/api/Login");
 

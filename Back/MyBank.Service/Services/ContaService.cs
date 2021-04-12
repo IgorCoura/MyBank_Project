@@ -26,39 +26,53 @@ namespace MyBank.Service.Services
         public ContaModel insert(TokenModel createConta)
         {
             string agencia = "0001";
-            string NumConta = geradorNumeroConta();
+            string NumConta = GeradorNumeroConta(agencia);
             var conta = new Conta(0, agencia, NumConta);
             conta.Cliente =_repositoryCliente.Get(createConta.token);
             _repositoryConta.Save(conta);
             return conta.ConvertToReturnModel();
         }
 
-        public IEnumerable<ContaModel> Recover()
+        public void delete(DeleteContaModel contaModel)
+        {
+            var cliente = _repositoryCliente.Get(contaModel.Token);
+            if(cliente != null)
+            {
+                _repositoryConta.Remove(contaModel.Agencia, contaModel.NumConta);
+            }
+            else
+            {
+                throw new Exception("Token invalido");
+            }
+            
+        }
+
+        public IEnumerable<ContaModel> recover()
         {
             IEnumerable<Conta> contas = _repositoryConta.Get();
             return contas.ConvertToReturnModel();
         }
 
-        public ContaModel Recover(int id)
+        public ContaModel recover(int id)
         {
             var conta = _repositoryConta.Get(id);
             return conta.ConvertToReturnModel(); ;
         }
-        private Conta RecoverConta(string agencia, string numConta)
+        private Conta recoverConta(string agencia, string numConta)
         {
             return _repositoryConta.Get(agencia, numConta);
         }
 
-        public virtual void Depositar(ConsultaContaModel contaModel)
+        public virtual void depositar(ConsultaContaModel contaModel)
         {
-            Conta conta = RecoverConta(contaModel.Agencia, contaModel.NumConta);
+            Conta conta = recoverConta(contaModel.Agencia, contaModel.NumConta);
             conta.Saldo += contaModel.Valor;
             _repositoryConta.Save(conta);
         }
 
-        public virtual void Sacar(ConsultaContaModel contaModel)
+        public virtual void sacar(ConsultaContaModel contaModel)
         {
-            Conta conta = RecoverConta(contaModel.Agencia, contaModel.NumConta);
+            Conta conta = recoverConta(contaModel.Agencia, contaModel.NumConta);
             conta.Saldo -= contaModel.Valor;
             if (conta.Saldo >= 0)
             {
@@ -72,14 +86,14 @@ namespace MyBank.Service.Services
 
         }
 
-        public virtual void Transferir(ConsultaContaModel contaModelOrigin, ConsultaContaModel contaModelDestiny)
+        public virtual void transferir(ConsultaContaModel contaModelOrigin, ConsultaContaModel contaModelDestiny)
         {
-            Sacar(contaModelOrigin);
+            sacar(contaModelOrigin);
             contaModelDestiny.Valor = contaModelOrigin.Valor;
-            Depositar(contaModelDestiny);
+            depositar(contaModelDestiny);
         }
 
-        private string geradorNumeroConta()
+        private string GeradorNumeroConta(string agencia)
         {
             while(true)
             {
@@ -99,7 +113,7 @@ namespace MyBank.Service.Services
                 }
                 try
                 {
-                    var conta = _repositoryConta.Get(resp);
+                    var conta = _repositoryConta.Get(agencia, resp);
                     if(conta == null)
                     {
                         return resp;
@@ -113,7 +127,7 @@ namespace MyBank.Service.Services
             }          
         }
 
-        private int Verhoeff(int[] cadeia)
+        private static int Verhoeff(int[] cadeia)
         {
             int[,] TLOCAL = new int[8,10]{ 
                 {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, 

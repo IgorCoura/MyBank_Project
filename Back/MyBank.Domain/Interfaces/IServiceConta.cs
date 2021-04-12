@@ -6,10 +6,11 @@ namespace MyBank.Domain.Interfaces
     public interface IServiceConta
     {
         public ContaModel insert(TokenModel createConta);
-        public IEnumerable<ContaModel> Recover();
-        public ContaModel Recover(int id);
-        public void Depositar(ConsultaContaModel contaModel);
-        public void Sacar(ConsultaContaModel contaModel);
-        public void Transferir(ConsultaContaModel contaModelOrigin, ConsultaContaModel contaModelDestiny);
+        public void delete(DeleteContaModel contaModel);
+        public IEnumerable<ContaModel> recover();
+        public ContaModel recover(int id);
+        public void depositar(ConsultaContaModel contaModel);
+        public void sacar(ConsultaContaModel contaModel);
+        public void transferir(ConsultaContaModel contaModelOrigin, ConsultaContaModel contaModelDestiny);
     }
 }

@@ -12,4 +12,12 @@ class HomeApi {
     Map<String, dynamic> json = jsonDecode(reponse.body);
     return json["contaModel"];
   }
+
+  static void createConta(String token) async {
+    var path = "/api/Conta/Register";
+    Map<String, String> params = {
+      "token": token,
+    };
+    await BaseApi.apiPost(params, path);
+  }
 }
