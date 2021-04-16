@@ -35,22 +35,15 @@ namespace MyBank.Service.Services
 
         }
 
-        public IEnumerable<ClienteModel> RecoverAll()
-        {
-            var cliente = _repositoryCliente.Get();
-            return cliente.ConvertToModel();
-        }
-
         public ClienteModel Recover(TokenModel token)
         {
            var cliente = _repositoryCliente.Get(token.token);
            var clienteModel = cliente.ConvertToModel();
-           clienteModel.ContaModel = (IList<ContaModel>)_repositoryConta.GetList(cliente.Id).ConvertToReturnModel();
+           clienteModel.ContaModel = (IList<ReturnContaModel>)_repositoryConta.GetList(cliente.Id).ConvertToReturnModel();
            return clienteModel;
-        }
-        
+        }        
 
-        public RespostaLoginModel Login(LoginModel loginModel)
+        public ReturnLoginModel Login(LoginModel loginModel)
         {
             CPF cpf = loginModel.CPF;
             var cliente = _repositoryCliente.Get(cpf, loginModel.Senha);
@@ -73,15 +66,10 @@ namespace MyBank.Service.Services
                 cliente.Token = token;
                 cliente.ExpirationToken = expires;
                 _repositoryCliente.Save(cliente);
-                return new RespostaLoginModel(true, "Acesso autorizado", expires, token, cliente.Nome);
+                return new ReturnLoginModel(true, "Acesso autorizado", expires, token, cliente.Nome);
             }
 
-            return new RespostaLoginModel(false, "Acesso negado");
-        }
-
-        public void Delete(int id)
-        {
-            _repositoryCliente.Remove(id);
+            return new ReturnLoginModel(false, "Acesso negado");
         }
 
 

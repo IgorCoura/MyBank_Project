@@ -8,9 +8,9 @@ namespace MyBank.Infra.Shared.Mapper
     public static class ConvertConta
     {
 
-        public static ContaModel ConvertToReturnModel(this Conta entity) => 
-            new ContaModel(entity.Id, entity.Agencia, entity.NumConta, entity.Saldo);
-        public static IEnumerable<ContaModel> ConvertToReturnModel(this IEnumerable<Conta> entitys) =>
-            new List<ContaModel>(entitys.Select(e => new ContaModel(e.Id, e.Agencia, e.NumConta, e.Saldo)));
+        public static ReturnContaModel ConvertToReturnModel(this Conta entity) => 
+            new ReturnContaModel(entity.Id, entity.Agencia, entity.NumConta, entity.Saldo);
+        public static IEnumerable<ReturnContaModel> ConvertToReturnModel(this IEnumerable<Conta> entitys) =>
+            new List<ReturnContaModel>(entitys.Select(e => new ReturnContaModel(e.Id, e.Agencia, e.NumConta, e.Saldo)));
     }
 }

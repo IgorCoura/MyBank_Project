@@ -26,7 +26,7 @@ namespace MyBank.Application.Api.Controllers
         {
             try
             {
-                RespostaLoginModel resp = _serviceCliente.Login(req);
+                ReturnLoginModel resp = _serviceCliente.Login(req);
 
                 if (resp.Authorization)
                 {

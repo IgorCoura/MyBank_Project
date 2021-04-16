@@ -31,6 +31,11 @@ namespace MyBank.Infra.Data.Repository
             }            
         }
 
+        public bool AuthenticateToken(string token)
+        {
+            var timeNow = DateTime.UtcNow;
+            return base.Select(x => x.Token == token && x.ExpirationToken > timeNow) != null;
+        }
         public Cliente Get(int id) => base.Select(x => x.Id == id);
         public Cliente Get(CPF cpf, string senha) => base.Select(x => x.CPF == cpf && x.Senha == senha);
         public Cliente Get(string token) {

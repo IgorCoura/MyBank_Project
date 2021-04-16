@@ -18,7 +18,7 @@ namespace MyBank.Domain.Models
         public string Nome { get; set; }
         public string CPF { get; set; }
         public string DataNascimento { get; set; }
-        public IList<ContaModel> ContaModel { get; set; }
+        public IList<ReturnContaModel> ContaModel { get; set; }
 
 
     }

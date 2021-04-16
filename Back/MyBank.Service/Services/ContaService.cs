@@ -23,7 +23,7 @@ namespace MyBank.Service.Services
 
         }
 
-        public ContaModel insert(TokenModel createConta)
+        public ReturnContaModel insert(TokenModel createConta)
         {
             string agencia = "0001";
             string NumConta = GeradorNumeroConta(agencia);
@@ -33,10 +33,10 @@ namespace MyBank.Service.Services
             return conta.ConvertToReturnModel();
         }
 
-        public void delete(DeleteContaModel contaModel)
+        public void delete(ContaModel contaModel)
         {
-            var cliente = _repositoryCliente.Get(contaModel.Token);
-            if(cliente != null)
+            
+            if(_repositoryCliente.AuthenticateToken(contaModel.Token))
             {
                 _repositoryConta.Remove(contaModel.Agencia, contaModel.NumConta);
             }
@@ -47,47 +47,39 @@ namespace MyBank.Service.Services
             
         }
 
-        public IEnumerable<ContaModel> recover()
+        public virtual void depositar(TransacaoContaModel contaModel)
         {
-            IEnumerable<Conta> contas = _repositoryConta.Get();
-            return contas.ConvertToReturnModel();
-        }
-
-        public ContaModel recover(int id)
-        {
-            var conta = _repositoryConta.Get(id);
-            return conta.ConvertToReturnModel(); ;
-        }
-        private Conta recoverConta(string agencia, string numConta)
-        {
-            return _repositoryConta.Get(agencia, numConta);
-        }
-
-        public virtual void depositar(ConsultaContaModel contaModel)
-        {
-            Conta conta = recoverConta(contaModel.Agencia, contaModel.NumConta);
+            Conta conta = _repositoryConta.Get(contaModel.Agencia, contaModel.NumConta);
             conta.Saldo += contaModel.Valor;
             _repositoryConta.Save(conta);
         }
 
-        public virtual void sacar(ConsultaContaModel contaModel)
+        public virtual void sacar(TransacaoContaModel contaModel)
         {
-            Conta conta = recoverConta(contaModel.Agencia, contaModel.NumConta);
-            conta.Saldo -= contaModel.Valor;
-            if (conta.Saldo >= 0)
+            if (_repositoryCliente.AuthenticateToken(contaModel.Token))
             {
-                _repositoryConta.Save(conta);
+                var conta = _repositoryConta.Get(contaModel.Agencia, contaModel.NumConta);
+                conta.Saldo -= contaModel.Valor;
+                if (conta.Saldo >= 0)
+                {
+                    _repositoryConta.Save(conta);
+                }
+                else
+                {
+                    throw new Exception("Saldo insuficiente.");
+                }
             }
             else
             {
-                throw new Exception("Saldo insuficiente.");
-            }
-
+                throw new Exception("Token invalido");
+            }          
 
         }
 
-        public virtual void transferir(ConsultaContaModel contaModelOrigin, ConsultaContaModel contaModelDestiny)
+        public virtual void transferir(TransferenciaContaModel contaModel)
         {
+            var contaModelOrigin = new TransacaoContaModel(contaModel.AgenciaOrigem, contaModel.NumContaOrigem, contaModel.Token, contaModel.ValorOrigen);
+            var contaModelDestiny = new TransacaoContaModel(contaModel.AgenciaDestino, contaModel.NumContaDestino, "", contaModel.ValorDestino);
             sacar(contaModelOrigin);
             contaModelDestiny.Valor = contaModelOrigin.Valor;
             depositar(contaModelDestiny);

@@ -11,6 +11,7 @@ namespace MyBank.Domain.Interfaces
         public void Remove(int id);
 
         public void Save(Cliente obj);
+        public bool AuthenticateToken(string token);
 
         public Cliente Get(int id);
         public Cliente Get(CPF cpf, string senha);

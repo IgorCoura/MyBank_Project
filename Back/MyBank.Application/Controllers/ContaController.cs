@@ -18,7 +18,7 @@ namespace MyBank.Application.Api.Controllers
             _serviceConta = serviceConta;
         }
 
-        [HttpPost("Register")]        
+        [HttpPost("Register")]
         public IActionResult CreateConta([FromBody] TokenModel contaModel)
         {
             try
@@ -32,12 +32,26 @@ namespace MyBank.Application.Api.Controllers
             }
         }
 
-        [HttpDelete("Deletar")]
-        public IActionResult RemoveConta([FromBody] DeleteContaModel contaModel)
+        [HttpPatch("Sacar")]
+        public IActionResult SacarConta([FromBody] TransacaoContaModel contaModel)
         {
             try
             {
-                _serviceConta.delete(contaModel);
+                _serviceConta.sacar(contaModel);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+
+        [HttpPatch("Depositar")]
+        public IActionResult DepositarConta([FromBody] TransacaoContaModel contaModel)
+        {
+            try
+            {
+                _serviceConta.depositar(contaModel);
                 return Ok();
             }
             catch(Exception e)
@@ -46,13 +60,13 @@ namespace MyBank.Application.Api.Controllers
             }
         }
 
-        [HttpGet("Recover")]
-        public IActionResult Recover()
+        [HttpPatch("Transferir")]
+        public IActionResult TransferirConta([FromBody] TransferenciaContaModel contaModel)
         {
             try
             {
-                var conta = _serviceConta.recover();
-                return Ok(conta);
+                _serviceConta.transferir(contaModel);
+                return Ok();
             }
             catch(Exception e)
             {
@@ -60,13 +74,13 @@ namespace MyBank.Application.Api.Controllers
             }
         }
 
-        [HttpGet("RecoverAll")]
-        public IActionResult RecoverAll()
+        [HttpDelete("Deletar")]
+        public IActionResult RemoveConta([FromBody] ContaModel contaModel)
         {
             try
             {
-                var contas = _serviceConta.recover();
-                return Ok(contas);
+                _serviceConta.delete(contaModel);
+                return Ok();
             }
             catch(Exception e)
             {

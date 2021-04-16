@@ -1,18 +1,23 @@
-﻿namespace MyBank.Domain.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyBank.Domain.Models
 {
     public class ContaModel
     {
-        public ContaModel(int id, string agencia, string numConta, double saldo)
+        public ContaModel(string agencia, string numConta, string token)
         {
-            Id = id;
-            Agencia = agencia;
-            NumConta = numConta;
-            Saldo = saldo;
+            this.Agencia = agencia;
+            this.NumConta = numConta;
+            this.Token = token;
         }
 
-        public int Id { get; set; }
         public string Agencia { get; set; }
         public string NumConta { get; set; }
-        public double Saldo { get; set; }
+        public string Token { get; set; }
     }
+
 }

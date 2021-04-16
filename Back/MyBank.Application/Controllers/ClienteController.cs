@@ -33,20 +33,6 @@ namespace MyBank.Application.Api.Controllers
             }
         }
 
-        [HttpGet("RecoverAll")]
-        public IActionResult RecoverAll()
-        {
-            try
-            {
-                var clientes = _serviceCliente.RecoverAll();
-                return Ok(clientes);
-            }
-            catch(Exception e)
-            {
-                return BadRequest(e);
-            }
-        }
-
         [HttpGet("RecoverByToken")]
         public IActionResult Recover(string token)
         {

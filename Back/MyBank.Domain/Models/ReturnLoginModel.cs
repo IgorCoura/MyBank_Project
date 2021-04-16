@@ -2,9 +2,9 @@
 
 namespace MyBank.Domain.Models
 {
-    public class RespostaLoginModel
+    public class ReturnLoginModel
     {
-        public RespostaLoginModel(bool authorization, string messagen, DateTime? expiration = null, string token = "", string nameCliente = "")
+        public ReturnLoginModel(bool authorization, string messagen, DateTime? expiration = null, string token = "", string nameCliente = "")
         {
             Authorization = authorization;
             Expiration = expiration;
