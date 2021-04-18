@@ -13,7 +13,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   _atualizarHome() {
-    print("object");
     setState(() {
       widget._allContas = HomeApi.recoverContas(widget.data["token"]);
     });
@@ -83,8 +82,10 @@ class _HomePageState extends State<HomePage> {
                     side: BorderSide(color: ColorsLayout.primaryColor()))),
             backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
           ),
-          onPressed: () =>
-              {HomeApi.createConta(widget.data["token"]), setState(() {})},
+          onPressed: () async => {
+            await HomeApi.createConta(widget.data["token"]),
+            _atualizarHome()
+          },
           child: Text(
             "Criar uma nova conta",
             style: TextStyle(color: ColorsLayout.primaryColor()),

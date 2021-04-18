@@ -8,7 +8,7 @@ namespace MyBank.Application.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class ContaController : ControllerBase
     {
         private readonly IServiceConta _serviceConta;

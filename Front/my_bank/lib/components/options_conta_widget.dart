@@ -179,7 +179,7 @@ class OptionsContaWidget extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () async => {
                 await ContaApi.depositarConta(_data["agencia"],
-                    _data["numConta"], double.parse(_ctrlValor.text)),
+                    _data["numConta"], double.parse(_ctrlValor.text), _token),
                 _atualizarHome(),
                 Navigator.pop(context)
               },

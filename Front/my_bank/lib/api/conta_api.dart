@@ -9,7 +9,8 @@ class ContaApi {
       "numConta": numConta,
       "token": token,
     };
-    Response reponse = await BaseApi.apiDelete("/api/Conta/Deletar", params);
+    Response reponse =
+        await BaseApi.apiDelete("/api/Conta/Deletar", params, token: token);
 
     if (reponse.statusCode >= 200 || reponse.statusCode < 300) {
       return true;
@@ -34,7 +35,8 @@ class ContaApi {
       "numContaDestino": numContaDestino,
       "valor": valor,
     };
-    Response reponse = await BaseApi.apiPatch("/api/Conta/Transferir", params);
+    Response reponse =
+        await BaseApi.apiPatch("/api/Conta/Transferir", params, token: token);
 
     if (reponse.statusCode >= 200 || reponse.statusCode < 300) {
       return true;
@@ -55,7 +57,8 @@ class ContaApi {
       "numConta": numConta,
       "valor": valor,
     };
-    Response reponse = await BaseApi.apiPatch("/api/Conta/Sacar", params);
+    Response reponse =
+        await BaseApi.apiPatch("/api/Conta/Sacar", params, token: token);
     if (reponse.statusCode >= 200 || reponse.statusCode < 300) {
       return true;
     } else {
@@ -64,7 +67,7 @@ class ContaApi {
   }
 
   static Future<bool> depositarConta(
-      String agencia, String numConta, double valor) async {
+      String agencia, String numConta, double valor, String token) async {
     Map params = {
       "token": "",
       "agencia": agencia,
@@ -72,7 +75,8 @@ class ContaApi {
       "valor": valor,
     };
 
-    Response reponse = await BaseApi.apiPatch("/api/Conta/Depositar", params);
+    Response reponse =
+        await BaseApi.apiPatch("/api/Conta/Depositar", params, token: token);
     if (reponse.statusCode >= 200 || reponse.statusCode < 300) {
       return true;
     } else {
