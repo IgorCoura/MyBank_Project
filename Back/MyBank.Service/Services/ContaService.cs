@@ -78,8 +78,8 @@ namespace MyBank.Service.Services
 
         public virtual void transferir(TransferenciaContaModel contaModel)
         {
-            var contaModelOrigin = new TransacaoContaModel(contaModel.AgenciaOrigem, contaModel.NumContaOrigem, contaModel.Token, contaModel.ValorOrigen);
-            var contaModelDestiny = new TransacaoContaModel(contaModel.AgenciaDestino, contaModel.NumContaDestino, "", contaModel.ValorDestino);
+            var contaModelOrigin = new TransacaoContaModel(contaModel.AgenciaOrigem, contaModel.NumContaOrigem, contaModel.Token, contaModel.Valor);
+            var contaModelDestiny = new TransacaoContaModel(contaModel.AgenciaDestino, contaModel.NumContaDestino, "", contaModel.Valor);
             sacar(contaModelOrigin);
             contaModelDestiny.Valor = contaModelOrigin.Valor;
             depositar(contaModelDestiny);

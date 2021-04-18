@@ -4,16 +4,16 @@ import 'package:my_bank/pages/conta_page.dart';
 class ContaWidget extends StatelessWidget {
   final Map data;
   final String token;
-  ContaWidget(
-    this.data,
-    this.token,
-  );
+  final Function _atualizarHome;
+  ContaWidget(this.data, this.token, this._atualizarHome);
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => ContaPage(data, token)))
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ContaPage(data, token, _atualizarHome)))
       },
       child: Container(
         padding: const EdgeInsets.all(16.0),

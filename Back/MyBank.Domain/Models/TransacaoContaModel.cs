@@ -10,15 +10,15 @@ namespace MyBank.Domain.Models
     {
         public TransacaoContaModel(string agencia, string numConta, string token, double valor)
         {
-            this.Agencia = agencia;
-            this.NumConta = numConta;
-            this.Token = token;
+            Agencia = agencia;
+            NumConta = numConta;
+            Token = token;
             Valor = valor;
         }
 
-        public string Agencia { get; }
-        public string NumConta { get;  }
-        public string Token { get; }
+        public string Agencia { get; set; }
+        public string NumConta { get; set; }
+        public string Token { get; set; }
         public double Valor { get; set; }
     }
 

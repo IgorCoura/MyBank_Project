@@ -32,4 +32,30 @@ class BaseApi {
       return null;
     }
   }
+
+  static Future<http.Response> apiDelete(String path, Map params) async {
+    var url = Uri.https(_host, path);
+    var _body = jsonEncode(params);
+    http.Response response;
+    try {
+      response = await http.delete(url, headers: _header, body: _body);
+      return response;
+    } catch (e) {
+      print(e);
+      return null;
+    }
+  }
+
+  static Future<http.Response> apiPatch(String path, Map params) async {
+    var url = Uri.https(_host, path);
+    var _body = jsonEncode(params);
+    http.Response response;
+    try {
+      response = await http.patch(url, headers: _header, body: _body);
+      return response;
+    } catch (e) {
+      print(e);
+      return null;
+    }
+  }
 }

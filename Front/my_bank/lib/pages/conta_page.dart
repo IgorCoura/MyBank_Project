@@ -9,8 +9,9 @@ import 'package:my_bank/layout/colors_layout.dart';
 class ContaPage extends StatefulWidget {
   final Map data;
   final String token;
+  final Function _atualizarHome;
 
-  ContaPage(this.data, this.token);
+  ContaPage(this.data, this.token, this._atualizarHome);
 
   @override
   _ContaPageState createState() => _ContaPageState();
@@ -20,8 +21,9 @@ class _ContaPageState extends State<ContaPage> {
   int _options = 0;
 
   _alteraOption(int number) {
-    _options = number;
-    setState(() {});
+    setState(() {
+      _options = number;
+    });
   }
 
   @override
@@ -76,7 +78,7 @@ class _ContaPageState extends State<ContaPage> {
                         ),
                       ),
                       Text(
-                        "R\$ 1.000.500,22",
+                        "${widget.data["saldo"]}",
                         style: TextStyle(
                           color: ColorsLayout.primaryColor(),
                           fontSize: 45,
@@ -101,7 +103,8 @@ class _ContaPageState extends State<ContaPage> {
               )
             ],
           ),
-          OptionsContaWidget(_options)
+          OptionsContaWidget(_options, _alteraOption, widget.data, widget.token,
+              widget._atualizarHome)
         ],
       ),
     );

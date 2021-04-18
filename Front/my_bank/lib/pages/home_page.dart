@@ -5,12 +5,26 @@ import 'package:my_bank/layout/colors_layout.dart';
 
 class HomePage extends StatefulWidget {
   final Map<String, dynamic> data;
+  Future<List<dynamic>> _allContas;
   HomePage(this.data);
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  _atualizarHome() {
+    print("object");
+    setState(() {
+      widget._allContas = HomeApi.recoverContas(widget.data["token"]);
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _atualizarHome();
+  }
+
   @override
   Widget build(BuildContext context) {
     var primeiroNome = widget.data["nameCliente"].split(" ")[0];
@@ -21,7 +35,7 @@ class _HomePageState extends State<HomePage> {
       ),
       backgroundColor: ColorsLayout.backgroundColor(),
       body: FutureBuilder(
-        future: HomeApi.recoverContas(widget.data["token"]),
+        future: widget._allContas,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
@@ -38,8 +52,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     );
                   } else if (index < snapshot.data.length) {
-                    return ContaWidget(
-                        snapshot.data[index], widget.data["token"]);
+                    return ContaWidget(snapshot.data[index],
+                        widget.data["token"], _atualizarHome);
                   } else {
                     return _buttonWidget();
                   }
