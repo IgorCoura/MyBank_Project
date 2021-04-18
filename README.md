@@ -1,7 +1,7 @@
 # MyBank_Project
 Este é um projeto que eu fiz para medir a minha atual capacidade em criar uma api e integrar com um front-end.
 
-* O back-end foi feito em .net core usando com desing de sistema o DDD.
+* O back-end foi feito em .net core usando como desing de sistema o DDD.
 * O front-end foi feito um flutter.
 * Para autenticação foi ultilizado Jwt. 
 * Para rodar o sistema basta roda a api pegar o ip e atualizar no arquivo base_api (o ip "localhost" só funciona na versão web do flutter).
